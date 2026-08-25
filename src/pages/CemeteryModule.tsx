@@ -28,7 +28,7 @@ import {
 import { CemeteryPlot, BurialRecord } from '../types';
 
 export function CemeteryModule() {
-  const [cemeteries, setCemeteries] = useState<any[]>([]);
+  const [cemeteries, setCemeteries] = useState<string[]>([]);
   const [selectedCemetery, setSelectedCemetery] = useState<string>('all');
   const [plots, setPlots] = useState<CemeteryPlot[]>([]);
   const [burials, setBurials] = useState<BurialRecord[]>([]);
@@ -272,7 +272,7 @@ export function CemeteryModule() {
           >
             <option value="all">Barangay 178 Municipal Cemetery</option>
             {cemeteries.map((c, idx) => (
-              <option key={idx} value={c.name || c}>{c.name || c}</option>
+              <option key={idx} value={c}>{c}</option>
             ))}
           </select>
         </div>

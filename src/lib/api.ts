@@ -386,10 +386,9 @@ export async function checkFacilityAI(facilityName: string, eventDate: string, s
   };
 }
 
-export async function fetchCemeteries() {
-  return [
-    { id: 1, name: 'Barangay 178 Municipal Cemetery', type: 'Public / Municipal', capacity: '1,200 Niches & Plots' }
-  ];
+export async function fetchCemeteries(): Promise<string[]> {
+  // Return plain strings so components can use them directly as option values/labels
+  return ['Barangay 178 Municipal Cemetery'];
 }
 
 export async function fetchCemeteryPlots(section = 'all', status = 'all', cemetery_name = 'all') {
